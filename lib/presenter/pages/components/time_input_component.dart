@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../store/pomodoro_store.dart';
 
 class TimeInputComponent extends StatelessWidget {
   final int valor;
@@ -11,6 +14,7 @@ class TimeInputComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Provider.of<PomodoroStore>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -25,6 +29,7 @@ class TimeInputComponent extends StatelessWidget {
             _buildButtom(
               icon: Icons.arrow_downward,
               onPressed: dec,
+              isWorking: store.working(),
             ),
             Text(
               '$valor min',
@@ -33,6 +38,7 @@ class TimeInputComponent extends StatelessWidget {
             _buildButtom(
               icon: Icons.arrow_upward,
               onPressed: inc,
+              isWorking: store.working(),
             ),
           ],
         ),
@@ -43,13 +49,14 @@ class TimeInputComponent extends StatelessWidget {
   Widget _buildButtom({
     required IconData icon,
     VoidCallback? onPressed,
+    required bool isWorking,
   }) =>
       ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(15),
-          primary: Colors.red,
+          primary: isWorking ? Colors.red : Colors.green,
         ),
         child: Icon(
           icon,
