@@ -20,10 +20,7 @@
 </div>
 
 ## 📱 Screens
-<img src="images/rest.png" alt="rest" width="150">
-<img src="images/rest_stop.png" alt="rest stop" width="150">
-<img src="images/work.png" alt="work" width="150">
-<img src="images/work_stop.png" alt="work stop" width="150">
+<img src="images/rest.png" alt="rest" width="150"> <img src="images/rest_stop.png" alt="rest stop" width="150"> <img src="images/work.png" alt="work" width="150"> <img src="images/work_stop.png" alt="work stop" width="150">
 
 ## 🌐 Dependencies
 
